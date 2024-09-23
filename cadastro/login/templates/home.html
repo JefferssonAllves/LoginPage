@@ -1,0 +1,42 @@
+{% extends 'index.html' %}
+{% load static %}
+
+
+{% block 'style' %}
+    <link rel="stylesheet" href="{% static 'css/tabela.css' %}">
+    <style>
+        :root {
+            --cor_destaque: rgb(255, 255, 255);  
+        }
+    </style>
+{% endblock %}
+{% block 'h2' %}
+    Usuário: {{ user.username }}
+{% endblock %}
+
+{% block 'action' %}{% url 'logout' %}{% endblock %}
+{% block 'form' %}
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Opções</th>
+        </tr>
+        {% for indice, user in users %}
+            <tr>
+                <td>{{ indice}}</td>
+                <td>{{ user.get_username }}</td>
+        
+                <td>
+                    <div class="crud">
+                        <a href=""> Editar</a>
+                        <a id="openModalBtn" href="">Excluir</a>        
+                    </div>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    <div class="inputBox">
+        <input type="submit" value="Logout">
+    </div>
+{% endblock%} 

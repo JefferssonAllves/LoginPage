@@ -1,0 +1,42 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #222;
+    color: var(--cor_destaque);
+}
+tr:nth-child(even) {
+    background-color: #626262;
+}
+th, td {
+    border: 1px solid var(--cor_destaque);
+    padding: 10px;
+}
+td{
+    color: var(--cor_destaque);
+    font-weight: bold;
+}
+.signin .content .form .crud a 
+{
+    color: var(--cor_destaque);
+    background-color: #ffffff3b;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.excluir{
+    display: none;
+    position: fixed;
+    z-index: 1; /* Mantém o modal sobre o restante do conteúdo */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Fundo escurecido */
+}

@@ -1,0 +1,43 @@
+{% extends 'index.html' %}
+{% load static %}
+
+
+{% block 'style' %}
+    <style>
+        :root {
+            --cor_destaque: rgb(255, 0, 247);  
+        }
+    </style>
+{% endblock %}
+{% block 'h2' %}
+    Cadastrar-se
+{% endblock %}
+{% block 'form' %}
+    <div class="inputBox">
+        <input name="cpf" type="text" maxlength="14" oninput="mascaraCPF(this)" required> <i>CPF:</i>
+    </div>
+    <div class="inputBox">
+        <input name="nome" type="text" required> <i>Nome:</i>
+    </div>
+    <div class="inputBox">
+        <input name="data_nasc" type="text" maxlength="10" oninput="mascaraDataNasc(this)" required> <i>Data de Nascimento:</i>
+    </div>
+    <div class="inputBox">
+        <input name="telefone" type="text" maxlength="15" oninput="mascaraTelefone(this)" required> <i>Telefone:</i>
+    </div>
+    <div class="inputBox">
+        <input name="email" type="text" required> <i>Email:</i>
+    </div>
+    <!-- SENHA  -->
+    <div class="inputBox">
+        <input name="password" type="password" required> <i>Senha</i>
+    </div>
+    <!-- FIM SENHA -->
+    
+
+    <div class="links"><a href="{% url 'login' %}">Ja tem uma conta? Entre</a>
+    </div>
+    <div class="inputBox">
+        <input type="submit" value="Criar">
+    </div>
+{% endblock%} 
